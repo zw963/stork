@@ -57,13 +57,11 @@ Let's put a search box online that searches within the text of the [Federalist P
 
 ### Step 1: Include the HTML
 
-Stork hooks into existing HTML that you include on your page. Each Stork instance has to have an input hook and a results list; those two elements should be placed in a wrapper, though the wrapper is optional.
+Stork hooks into existing HTML that you include on your page. Each Stork instance has to have an input hook and a results list; those two elements should be placed in a wrapper with `class="stork-wrapper"`, because there are [several builtin css themes](/themes) availble as css, class name in the example above (`stork-input`, `stork-output`) are for the theme too. Most Stork themes assume the format above; the theme documentation will tell you if it requires something different. You can also design your own theme, at which point the styling and class names are up to you, this wrapper is totally optional.
 
 The input hook should have the `data-stork="federalist"` attribute, where `federalist` is the name with which you register that search instance. (This way, you can have multiple, independent search boxes on a page, all pointing to different instances.) It doesn't have to be `federalist` -- you can change it to whatever you want.
 
-The results list should be an empty `<div>` tag with the attribute `data-stork="federalist-results"`. Again, here, you can change `federalist` to whatever you want.
-
-The classes in the example above (`stork-input`, `stork-output`) are for the theme. Most Stork themes assume the format above; the theme documentation will tell you if it requires something different. You can also design your own theme, at which point the styling and class names are up to you.
+The search results list should be an empty `<div>` tag with the attribute `data-stork="federalist-output"`. Again, here, you can change `federalist` to whatever you want.
 
 ### Step 2: Include the Javascript
 
